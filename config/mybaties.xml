@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "mybatis-3-config.dtd" >
+<configuration>
+    <!-- 可以配置多个运行环境，但是每个SqlSessionFactory 实例只能选择一个运行环境 -->
+    <environments default="environment">
+        <environment id="environment">
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- UNPOOLED POOLED JNDI -->
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/db_goods" />
+                <property name="username" value="root" />
+                <property name="password" value="root" />
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <!--写好的sql文件一定要注册到全局配置文件中,如果在包下就com/...,如果都在config下,直接写名字  -->
+    <mappers>
+        <mapper resource="mybatiesmapper.xml"/>
+    </mappers>
+</configuration>

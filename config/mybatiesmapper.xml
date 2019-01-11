@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.haut.mybaties.mybatiesMapper">
+
+<!--     <insert id="saveStudent" parameterType="com.zhao.entity.Student">
+        insert into student values(default,#{name},#{password})
+    </insert> -->
+    
+    
+    <!--id:唯一标识; resultType:返回值类型,一般为javabean里的对象 -->
+    <select id="selectGoods" resultType="com.haut.bean.GoodsList">
+    <!-- 从传入过来的参数值取出id值 -->
+    select * from t_goodslist where gid=#{gid}
+    </select>
+</mapper>
+
+
