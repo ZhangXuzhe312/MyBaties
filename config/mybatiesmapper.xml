@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="com.haut.mybaties.mybatiesMapper">
+<!-- <mapper namespace="com.haut.mybaties.mybatiesMapper"> -->
+<!--接口式编程 namespace名字与接口的全类名相同，id与接口的抽象方法名相同  -->
+<mapper namespace="com.haut.dao.Goods">
 
 <!--     <insert id="saveStudent" parameterType="com.zhao.entity.Student">
         insert into student values(default,#{name},#{password})
@@ -8,7 +10,8 @@
     
     
     <!--id:唯一标识; resultType:返回值类型,一般为javabean里的对象 -->
-    <select id="selectGoods" resultType="com.haut.bean.GoodsList">
+    <!--接口式编程 id与接口方法一致  -->
+    <select id="selGoods" resultType="com.haut.bean.GoodsList">
     <!-- 从传入过来的参数值取出id值 -->
     select * from t_goodslist where gid=#{gid}
     </select>
